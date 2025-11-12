@@ -28,8 +28,9 @@ class TestUsers(TransactionCase):
                 user = self.env['res.users'].create({
                     'name': 'Marie-Noël',
                     'login': 'mnv',
+                    "description": None
                 })
-                user.description = None
+                self.assertEqal(user.description, '')
 
 
     def test_description_one_line(self):
